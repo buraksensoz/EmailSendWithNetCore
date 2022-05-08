@@ -1,0 +1,36 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+<form method="post" asp-action="SendMail">
+
+    <div class="input-group mb-3">
+        <span class="input-group-text" id="basic-addon1" style="width:120px">To</span>
+        <input type="text" class="form-control" name="toMail" placeholder="email address" aria-label="Username" aria-describedby="basic-addon1">
+    </div>
+
+
+    <div class="input-group mb-3">
+        <span class="input-group-text" id="basic-addon1" style="width:120px">Subject</span>
+        <input type="text" class="form-control" name="subject" aria-label="Username" aria-describedby="basic-addon1">
+    </div>
+
+
+    <div class="input-group">
+        <span class="input-group-text" style="width:120px">Mail Content</span>
+        <textarea class="form-control" name="content" style="resize:none" rows=8 aria-label="With textarea"></textarea>
+    </div>
+
+    <div class="form-check form-switch">
+        <input name="htmluse" class="form-check-input" value="true" type="checkbox" id="flexSwitchCheckChecked" checked>
+        <label class="form-check-label" for="flexSwitchCheckChecked">Mail With Html Template</label>
+    </div>
+
+    <div class="input-group mt-3">
+        <button type="submit" class="btn btn-success">Send Email</button>
+    </div>
+</form>
+<h5>@TempData["Message"]</h5>
+
+
+
+
